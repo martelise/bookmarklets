@@ -1,7 +1,7 @@
 (function(){
 
 	// the minimum version of jQuery we want
-	var v = "1.3.2";
+	var v = "1.11.0";
 
 	// check prior inclusion and version
 	if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
@@ -21,7 +21,18 @@
 	
 	function initMyBookmarklet() {
 		(window.myBookmarklet = function() {
-			$(".js-tweet-text").html("Test");
+			//$(".fullname").html("FullName");
+			$(".username").html(function(i, user){
+				var div = document.createElement('jalladiv');
+				div.innerHTML = user;
+				var username = div.innerText.replace("@", "");
+
+				return "<a  href='http://localhost/api/result.html?username="+username+"&source=twitter'>"+user+" link</a>";
+			});
+			//$(".js-tweet-text").html("Text");
+			//$(".content").html($(".username"));
+			//$(".content").hide();
+			//$(".js-tweet-text").hide();
 		})();
 	}
 })();
