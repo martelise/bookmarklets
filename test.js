@@ -22,17 +22,19 @@
 	function initMyBookmarklet() {
 		(window.myBookmarklet = function() {
 			//$(".fullname").html("FullName");
-			$(".username").html(function(i, user){
+			var url = window.location.hostname;
+			var host = url.split('.')[1];
+			if (host == twitter){
+				$(".username").html(function(i, user){
 				var div = document.createElement('jalladiv');
 				div.innerHTML = user;
 				var username = div.innerText.replace("@", "");
 
-				return "<a  href='http://localhost/api/result.html?username="+username+"&source=twitter'>"+user+" link</a>";
-			});
-			//$(".js-tweet-text").html("Text");
-			//$(".content").html($(".username"));
-			//$(".content").hide();
-			//$(".js-tweet-text").hide();
+				return user+"<a  href='http://localhost/result2.html?username="+username+"&source=twitter'> Click me!</a>";
+				});
+			}
+
+
 		})();
 	}
 })();
