@@ -33,7 +33,9 @@
 				return user+"<a  href='http://localhost/result2.html?username="+username+"&source=twitter'> Click me!</a>";
 				});
 			}
-
+			else{
+				alert("Data: " + "Not twitter");
+			}
 
 		})();
 	}
