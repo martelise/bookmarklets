@@ -23,7 +23,7 @@
 		(window.myBookmarklet = function() {
 			//$(".fullname").html("FullName");
 			var url = window.location.hostname;
-			var host = url.split('.')[1];
+			var host = url.split('.')[0];
 			alert("Data: " + host);
 			if (host === 'twitter'){
 				$(".username").html(function(i, user){
