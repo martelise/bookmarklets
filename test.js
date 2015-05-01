@@ -24,6 +24,7 @@
 			//$(".fullname").html("FullName");
 			var url = window.location.hostname;
 			var host = url.split('.')[1];
+			alert("Data: " + host);
 			if (host === 'twitter'){
 				$(".username").html(function(i, user){
 				var div = document.createElement('jalladiv');
