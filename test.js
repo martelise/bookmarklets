@@ -26,13 +26,10 @@
 			var host = url.split('.')[0];
 			alert("Data: " + host);
 			if (host === 'twitter'){
-				$(".username").html(function(i, user){
-				var div = document.createElement('jalladiv');
-				div.innerHTML = user;
-				var username = div.innerText.replace("@", "");
-
-				return user+"<a  href='http://localhost/result2.html?username="+username+"&source=twitter'> Click me!</a>";
-				});
+				$(".stream-item-header").html(function(i, d) {
+				var username = this.getElementsByClassName("username")[0].innerText.replace("@", "");
+				return d+"<a  href='http://localhost/result2.html?username="+username+"&source=twitter'> Click me!</a>";
+			});
 			}
 			else{
 				alert("Data: " + "Not twitter");
